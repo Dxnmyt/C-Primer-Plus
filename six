@@ -1,0 +1,188 @@
+for循环第一个语句可以输入printf，不一定是变量赋值，只执行一次
+
+#include <stdio.h>
+int main(void)
+{
+  intnum = 0;
+  for (printf("Keep entering numbers!\n"); num != 6;)
+  scanf("%d", &num);
+  printf("That's the one I want!\n");
+  return 0;
+}
+该程序打印第1行的句子一次， 在用户输入6之前不断接受数字：
+Keep entering numbers!
+3 5 8 6 That's the one I want！
+
+
+通过循环得到n的次方
+
+for(i = 1; i <= p; i++)
+pow *= n;
+
+
+编写一个程序， 创建一个包含26个元素的数组， 并在其中储存26个小
+写字母。 然后打印数组的所有内容。
+
+#include <stdio.h>
+
+int main()
+{
+	char ch = 'A';
+	for(int i = 0; i < 26; i++)
+	{
+		printf("%c", ch);
+		printf("  ");
+		ch ++;
+	}
+	return 0;
+}
+
+
+使用嵌套循环， 按下面的格式打印字符：
+$
+$$
+$$$
+$$$$
+$$$$$
+
+#include <stdio.h>
+
+int main()
+{
+	//char ch = 'A';
+	for(int i = 0; i < 5; i++)
+	{
+		for(int t = i; t>=0; t--)
+		{
+			printf("$");
+		}
+		printf("\n");
+	}
+	return 0;
+}
+
+3.使用嵌套循环， 按下面的格式打印字母：
+F
+FE
+FED
+FEDC
+FEDCB
+FEDCBA
+
+#include <stdio.h>
+
+int main()
+{
+	for(int i = 0; i < 6; i++)
+	{
+		char ch = 'F';
+		for(int j = 0; j <= i; j++)
+		{
+			printf("%c", ch);
+			ch--;
+		}
+		printf("\n");
+	}
+	return 0;
+}
+
+****5.编写一个程序， 提示用户输入大写字母。 使用嵌套循环以下面金字塔
+型的格式打印字母：
+    A
+   ABA
+  ABCBA
+ ABCDCBA
+ABCDEDCBA
+
+#include <stdio.h>
+
+int main() {
+    printf("inter specific uppercase letters\n");
+    char ch;
+    scanf("%c", &ch);
+    int num_rows = ch - 'A' + 1;
+
+    for (int row = 0; row < num_rows; row++) {
+        for (int space = 0; space < num_rows - 1 - row; space++) {
+            printf(" ");
+        }
+
+        for (char letter = 'A'; letter <= 'A' + row; letter++) {
+            printf("%c", letter);
+        }
+
+        for (char letter = 'A' + row - 1; letter >= 'A'; letter--) {
+            printf("%c", letter);
+        }
+
+        printf("\n");
+    }
+
+    return 0;
+}
+
+
+编写一个程序把一个单词读入一个字符数组中， 然后倒序打印这个单
+词。 提示： strlen()函数（第4章介绍过） 可用于计算数组最后一个字符的下
+标
+
+#include <stdio.h>
+#include <string.h>
+
+int main()
+{
+	char word[50];
+	printf("inter the word\n");
+	scanf("%s", word); \\%s读取字符串
+	int length = strlen(word);
+	
+	for(int i  = length - 1; i >= 0; i--)
+	{
+		printf("%c", word[i]);
+	}
+	return 0;
+}
+
+
+10.编写一个程序， 要求用户输入一个上限整数和一个下限整数， 计算
+从上限到下限范围内所有整数的平方和， 并显示计算结果。 然后程序继续提
+示用户输入上限和下限整数， 并显示结果， 直到用户输入的上限整数小于下
+限整数为止。
+
+#include <stdio.h>
+
+int main()
+{
+	printf("Enter lower and upper integer limits:");
+	int lower, upper;
+	scanf("%d %d", &lower, &upper);
+	int sum = 0;
+	while(lower <= upper)
+	{
+		for(int i = lower; i <= upper; i++)
+		{
+			int square = i * i;
+			sum += square;
+		}
+		printf("The sums of the squares from %d to %d is %d\n", lower * lower, upper * upper, sum);
+		printf("Enter next set of limits:");
+		scanf("%d %d", &lower, &upper);
+	}
+	printf("Done");
+	return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
